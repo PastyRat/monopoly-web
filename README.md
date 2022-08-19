@@ -7,7 +7,9 @@ A version of monopoly that runs in a web browser.
 
 - nvm install node --lts (will install latest v16.17.0 currently)
 
-- npm install --save
+- nvm use 16
+
+- npm install
 
 - npm test
 

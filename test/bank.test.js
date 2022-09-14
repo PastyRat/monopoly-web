@@ -7,7 +7,7 @@ describe('Bank', function () {
             const bank = new Bank(2)
             bank.creditPlayer(1, 100)
             const balance = bank.getBalance(1)
-            assert.equal(balance, 100);
+            assert.equal(balance, 1100);
         });
 
         it('should transfer funds', function () {
@@ -17,8 +17,8 @@ describe('Bank', function () {
             bank.transferFunds(0, 1, 20)
             const balance0 = bank.getBalance(0)
             const balance1 = bank.getBalance(1)
-            assert.equal(balance0, 80);
-            assert.equal(balance1, 120);
+            assert.equal(balance0, 1080);
+            assert.equal(balance1, 1120);
         });
     });
 });

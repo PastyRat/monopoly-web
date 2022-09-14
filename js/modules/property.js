@@ -1,10 +1,10 @@
 class Property {
-    constructor(p, pi, r, c) {
-        this.propertyName = p
+    constructor(pName, pi, pRent, pPrice) {
+        this.name = pName
         this.propertyId = pi
-        this.propertyRent = r
-        this.propertyBuy = c
-        this.propertyOwner = 999
+        this.rent = pRent
+        this.price = pPrice
+        this.owner = 999
     }
 
 

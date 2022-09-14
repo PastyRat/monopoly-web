@@ -4,7 +4,7 @@ import assert from 'assert';
 describe('Dice', function () {
     it('should give a random number', function () {
         const dice = new Dice()
-        const result = dice.rolldice()
+        const result = dice.roll()
         assert(result < 7)
     });
 });

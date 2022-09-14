@@ -1,5 +1,5 @@
 class Dice {
-    rolldice() {
+    roll() {
         return Math.ceil(Math.random() * 6);
     }
 }

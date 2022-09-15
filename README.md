@@ -15,6 +15,12 @@ A version of monopoly that runs in a web browser.
 
 - launch config for VS code is checked in
 
+Start a simple Web Server
+
+python -m http.server
+
+
+
 
 
 

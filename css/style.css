@@ -1,0 +1,154 @@
+div.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto;
+    background-color: lightseagreen;
+    padding: 10px;
+}
+
+div.card {
+    background-color: lightblue;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 10px;
+    text-align: center;
+}
+
+div#go {
+    grid-row: 8;
+    grid-column: 1
+}
+
+div#old-kent {
+    grid-row: 7;
+    grid-column: 1
+}
+
+div#whitechapel {
+    grid-row: 6;
+    grid-column: 1
+}
+
+div#kings-cross {
+    grid-row: 5;
+    grid-column: 1
+}
+
+div#angel {
+    grid-row: 4;
+    grid-column: 1
+}
+
+div#euston {
+    grid-row: 3;
+    grid-column: 1
+}
+
+div#pentonville {
+    grid-row: 2;
+    grid-column: 1
+}
+
+div#jail {
+    grid-row: 1;
+    grid-column: 1
+}
+
+div#pall-mall {
+    grid-row: 1;
+    grid-column: 2
+}
+
+div#whitehall {
+    grid-row: 1;
+    grid-column: 3
+}
+
+div#northumberland {
+    grid-row: 1;
+    grid-column: 4
+}
+
+div#bow {
+    grid-row: 1;
+    grid-column: 5
+}
+
+div#marlborough {
+    grid-row: 1;
+    grid-column: 6
+}
+
+div#vine {
+    grid-row: 1;
+    grid-column: 7
+}
+
+div#parking {
+    grid-row: 1;
+    grid-column: 8
+}
+
+div#strand {
+    grid-row: 2;
+    grid-column: 8
+}
+
+div#fleet {
+    grid-row: 3;
+    grid-column: 8
+}
+
+div#trafalgar {
+    grid-row: 4;
+    grid-column: 8
+}
+
+div#leicester {
+    grid-row: 5;
+    grid-column: 8
+}
+
+div#coventry {
+    grid-row: 6;
+    grid-column: 8
+}
+
+div#picadilly {
+    grid-row: 7;
+    grid-column: 8
+}
+
+div#go-to-jail {
+    grid-row: 8;
+    grid-column: 8
+}
+
+div#regent {
+    grid-row: 8;
+    grid-column: 7
+}
+
+div#oxford {
+    grid-row: 8;
+    grid-column: 6
+}
+
+div#bond {
+    grid-row: 8;
+    grid-column: 5
+}
+
+div#fenchurch {
+    grid-row: 8;
+    grid-column: 4
+}
+
+div#park {
+    grid-row: 8;
+    grid-column: 3
+}
+
+div#mayfair {
+    grid-row: 8;
+    grid-column: 2
+}

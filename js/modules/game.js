@@ -12,18 +12,18 @@ class Game {
         this.player1 = new Player("Player 2", 1)
         this.playerPositions = [0, 0]
 
-        const oldKent = new Property("Old Kent Rd", 0, 2, 60)
-        const whiteChappel = new Property("Whitechapel Rd", 1, 4, 60)
-        const angelIslington = new Property("The Angel Islington", 2, 4, 60)
-        const pallMall = new Property("Pall Mall", 3, 4, 60)
-        const vine = new Property("Vine Street", 4, 4, 60)
-        const euston = new Property("Euston Rd", 5, 4, 60)
-        const strand = new Property("Strand", 6, 4, 60)
-        const piccadilly = new Property("Picadilly", 7, 4, 60)
-        const parkLane = new Property("Park Lane", 8, 4, 60)
-        const mayfair = new Property("Mayfair", 9, 4, 60)
+        const oldKent = new Property("Old Kent Rd", 2, 60)
+        const whiteChapel = new Property("Whitechapel Rd", 4, 60)
+        const angelIslington = new Property("The Angel Islington", 4, 60)
+        const pallMall = new Property("Pall Mall", 4, 60)
+        const vine = new Property("Vine Street", 4, 60)
+        const euston = new Property("Euston Rd", 4, 60)
+        const strand = new Property("Strand", 4, 60)
+        const piccadilly = new Property("Picadilly", 4, 60)
+        const parkLane = new Property("Park Lane", 4, 60)
+        const mayfair = new Property("Mayfair", 4, 60)
 
-        this.propertyPositions = ["go", oldKent, whiteChappel, angelIslington, "freeParking", pallMall,
+        this.propertyPositions = ["go", oldKent, whiteChapel, angelIslington, "freeParking", pallMall,
             vine, euston, "freeParking", strand, piccadilly, parkLane, mayfair]
     }
 
@@ -33,7 +33,7 @@ class Game {
     }
 
     bankrupt() {
-        
+
     }
 
     takeTurn() {
@@ -63,8 +63,7 @@ class Game {
 
     payRent(playerid, property) {
         this.bank.transferFunds(playerid, property.owner, property.rent)
-        console.log(playerid+"payed"+property.owner+property.rent)
+        console.log(`player ${playerid} paid player ${property.owner} £ ${property.rent}`)
     }
-
 }
 export { Game };

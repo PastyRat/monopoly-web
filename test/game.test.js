@@ -34,3 +34,17 @@ describe('Game', function () {
         assert(game.bank.getBalance(1) == 1000 - 4)
     })
 })
+
+describe('Game', function () {
+    it('should pass go', function () {
+        // given
+        const game = new Game()
+        game.dice = new MockDice()
+        game.playerPositions = [12, 12]
+        game.rollCounter = 4
+        // when
+        game.takeTurn()
+        // then
+        assert.equal(game.playerPositions[0] , 1)
+    })
+})

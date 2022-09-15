@@ -23,8 +23,8 @@ class Game {
         const parkLane = new Property("Park Lane", 8, 4, 60)
         const mayfair = new Property("Mayfair", 9, 4, 60)
 
-        this.propertyPositions = [oldKent, whiteChappel, angelIslington, pallMall,
-            vine, euston, strand, piccadilly, parkLane, mayfair]
+        this.propertyPositions = ["go", oldKent, whiteChappel, angelIslington, "freeParking", pallMall,
+            vine, euston, "freeParking", strand, piccadilly, parkLane, mayfair]
     }
 
     turnFinder() {
@@ -32,18 +32,27 @@ class Game {
         return (this.rollCounter - 1) % 2
     }
 
+    bankrupt() {
+        
+    }
+
     takeTurn() {
         const playerId = this.turnFinder()
+        if (this.bank.getBalance(playerId) < 1) {
+            bankrupt()
+        }
         const roll = this.dice.roll()
-        const playerPosition = this.playerPositions[playerId] + roll
+        const playerPosition = (this.playerPositions[playerId] + roll) % 13
         this.playerPositions[playerId] = playerPosition
 
-        const property = this.propertyPositions[playerPosition]
-        if (property.owner == 999) {
-            this.buy(playerId, property)
-        }
-        else {
-            this.payRent(playerId, property)
+        const square = this.propertyPositions[playerPosition]
+        if (square instanceof Property) {
+            if (square.owner == 999) {
+                this.buy(playerId, square)
+            }
+            else {
+                this.payRent(playerId, square)
+            }
         }
     }
 
@@ -54,6 +63,7 @@ class Game {
 
     payRent(playerid, property) {
         this.bank.transferFunds(playerid, property.owner, property.rent)
+        console.log(playerid+"payed"+property.owner+property.rent)
     }
 
 }

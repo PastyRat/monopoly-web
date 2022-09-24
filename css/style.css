@@ -13,6 +13,13 @@ div.card {
     text-align: center;
 }
 
+div#title {
+    grid-row: 3;
+    grid-column: 5; 
+    font-size: 40px;
+    font-family: 'Bungee Spice', cursive;
+}
+
 div#go {
     grid-row: 8;
     grid-column: 1

@@ -17,6 +17,9 @@
         function takeTurn() {
             const turnResult = game.takeTurn()
             movePlayer(turnResult)
+            for (let i = 0; i < game.bank.accounts.length; i++) {
+                setBalance(i, game.bank.accounts[i])
+            }
         }
 
         window.takeTurn = takeTurn
@@ -28,8 +31,14 @@
         <div id="title">
             <h1>Monopoly</h1>
         </div>
-        <div id="dice" class="card">
-            <button onclick="takeTurn()">Roll dice</button>
+        <div id="dice">
+            <button class="dice" onclick="takeTurn()">Roll dice</button>
+        </div>
+        <div id="player-status">
+            <p class="player-money">&#128056; Angus &pound;<span id="balance-0">1000</span></p>
+            <p class="player-money">&#128057; Rowan &pound;<span id="balance-1">1000</span></p>
+            <p class="player-money">&#128058; John &pound;<span id="balance-2">1000</span></p>
+            <p class="player-money">&#128059; Michelle &pound;<span id="balance-3">1000</span></p>
         </div>
         <div id="go" class="card">
             <h2>Go </h2>
@@ -63,7 +72,7 @@
             <p>&pound; 60</p>
         </div>
         <div id="kings-cross" class="card">
-            <div class="set set-clear"></div>
+            <div class="set set-clear"><span class="card-emoji">&#128642;</span></div>
             <h2>Kings Cross station </h2>
             <div class="players">
                 <span id="kings-cross-player-0" class="player">&#128056;</span>
@@ -245,14 +254,14 @@
             </div>
             <p>&pound; 60</p>
         </div>
-        <div id="picadilly" class="card">
+        <div id="piccadilly" class="card">
             <div class="set set-yellow"></div>
-            <h2>Picadilly </h2>
+            <h2>Piccadilly</h2>
             <div class="players">
-                <span id="picadilly-player-0" class="player">&#128056;</span>
-                <span id="picadilly-player-1" class="player">&#128057;</span>
-                <span id="picadilly-player-2" class="player">&#128058;</span>
-                <span id="picadilly-player-3" class="player">&#128059;</span>
+                <span id="piccadilly-player-0" class="player">&#128056;</span>
+                <span id="piccadilly-player-1" class="player">&#128057;</span>
+                <span id="piccadilly-player-2" class="player">&#128058;</span>
+                <span id="piccadilly-player-3" class="player">&#128059;</span>
             </div>
             <p>&pound; 60</p>
         </div>

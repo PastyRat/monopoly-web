@@ -10,3 +10,7 @@ function hide(id) {
 function show(id) {
     document.getElementById(id).style.display = 'inline'
 }
+
+function setBalance(id, playerBalance) {
+    document.getElementById(`balance-${id}`).innerHTML = playerBalance
+}

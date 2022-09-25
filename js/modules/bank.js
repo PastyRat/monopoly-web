@@ -1,6 +1,6 @@
 class Bank {
     constructor(numPlayers) {
-        this.accounts = {}
+        this.accounts = []
         for (let i = 0; i < numPlayers; i++) {
             this.accounts[i] = 1000
         }

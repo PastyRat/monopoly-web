@@ -36,7 +36,7 @@ class Game {
         const trafalgar = new Property("trafalgar", "Trafalgar Sq", 4, 60)
         const leicester = new Property("leicester", "Leicester Sq", 4, 60)
         const coventry = new Property("coventry", "Coventry St", 4, 60)
-        const piccadilly = new Property("picadilly", "Picadilly", 4, 60)
+        const piccadilly = new Property("piccadilly", "piccadilly", 4, 60)
         //
         const goToJail = new Location("go-to-jail")
         const regent = new Property("regent", "Regent St", 4, 60)

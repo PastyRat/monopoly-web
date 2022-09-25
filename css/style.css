@@ -16,9 +16,42 @@
 
 div#title {
     grid-row: 3;
-    grid-column: 5;
-    font-size: 40px;
+    grid-column: 4 / span 2;
+    text-align: center;
+}
+
+h1 {
+    font-size: 100px;
     font-family: 'Bungee Spice', cursive;
+    margin: 0;
+}
+
+div#player-status {
+    grid-row: 4;
+    grid-column: 4 / span 2;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.player-money {
+    padding-left: 10px;
+    margin: 1px;
+}
+
+div#dice {
+    grid-row: 5;
+    grid-column: 4 / span 2;
+    padding: 30px 0;
+    text-align: center;
+}
+
+
+.dice {
+    background-color: orange;
+    font-size: 30px;
+    color: white;
+    padding: 15px;
 }
 
 .set {
@@ -72,18 +105,12 @@ h2 {
 }
 
 .player {
-    font-size: 20px;
+    font-size: 30px;
     display: none;
 }
 
 .player-show {
     display: inline;
-}
-
-#dice {
-    grid-row: 4;
-    grid-column: 4;
-    border: 1px solid red;
 }
 
 #go {
@@ -186,7 +213,7 @@ h2 {
     grid-column: 8
 }
 
-#picadilly {
+#piccadilly {
     grid-row: 7;
     grid-column: 8
 }

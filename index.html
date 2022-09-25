@@ -1,13 +1,26 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Monopoly web</title>
     <link rel="stylesheet" href="css/style.css">
+    <script type="application/javascript" src="js/display.js"></script>
+    <script type="module">
+        import { Game } from "./js/modules/game.js"
+        const game = new Game()
+
+        function takeTurn() {
+            const turnResult = game.takeTurn()
+            movePlayer(turnResult)
+        }
+
+        window.takeTurn = takeTurn
+    </script>
 </head>
 
 <body>
@@ -15,113 +28,307 @@
         <div id="title">
             <h1>Monopoly</h1>
         </div>
+        <div id="dice" class="card">
+            <button onclick="takeTurn()">Roll dice</button>
+        </div>
         <div id="go" class="card">
-            <h2>Go</h2>
-        <img src="tokens/hat.png" alt="hattoken">
+            <h2>Go </h2>
+            <div class="players">
+                <span id="go-player-0" class="player player-show">&#128056;</span>
+                <span id="go-player-1" class="player player-show">&#128057;</span>
+                <span id="go-player-2" class="player player-show">&#128058;</span>
+                <span id="go-player-3" class="player player-show">&#128059;</span>
+            </div>
         </div>
         <div id="old-kent" class="card">
-            <h2>Old Kent Road</h2>
+            <div class="set set-brown"></div>
+            <h2>Old Kent Road </h2>
+            <div class="players">
+                <span id="old-kent-player-0" class="player">&#128056;</span>
+                <span id="old-kent-player-1" class="player">&#128057;</span>
+                <span id="old-kent-player-2" class="player">&#128058;</span>
+                <span id="old-kent-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="whitechapel" class="card">
-            <h2>Whitechapel Road</h2>
+            <div class="set set-brown"></div>
+            <h2>Whitechapel Road </h2>
+            <div class="players">
+                <span id="whitechapel-player-0" class="player">&#128056;</span>
+                <span id="whitechapel-player-1" class="player">&#128057;</span>
+                <span id="whitechapel-player-2" class="player">&#128058;</span>
+                <span id="whitechapel-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="kings-cross" class="card">
-            <h2>Kings Cross station</h2>
+            <div class="set set-clear"></div>
+            <h2>Kings Cross station </h2>
+            <div class="players">
+                <span id="kings-cross-player-0" class="player">&#128056;</span>
+                <span id="kings-cross-player-1" class="player">&#128057;</span>
+                <span id="kings-cross-player-2" class="player">&#128058;</span>
+                <span id="kings-cross-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="angel" class="card">
-            <h2>Angel Islington</h2>
+            <div class="set set-blue"></div>
+            <h2>Angel Islington </h2>
+            <div class="players">
+                <span id="angel-player-0" class="player">&#128056;</span>
+                <span id="angel-player-1" class="player">&#128057;</span>
+                <span id="angel-player-2" class="player">&#128058;</span>
+                <span id="angel-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="euston" class="card">
-            <h2>Euston Road</h2>
+            <div class="set set-blue"></div>
+            <h2>Euston Road </h2>
+            <div class="players">
+                <span id="euston-player-0" class="player">&#128056;</span>
+                <span id="euston-player-1" class="player">&#128057;</span>
+                <span id="euston-player-2" class="player">&#128058;</span>
+                <span id="euston-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="pentonville" class="card">
-            <h2>Pentonville Road</h2>
+            <div class="set set-blue"></div>
+            <h2>Pentonville Road </h2>
+            <div class="players">
+                <span id="pentonville-player-0" class="player">&#128056;</span>
+                <span id="pentonville-player-1" class="player">&#128057;</span>
+                <span id="pentonville-player-2" class="player">&#128058;</span>
+                <span id="pentonville-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="jail" class="card">
-            <h2>Jail</h2>
+            <h2>Jail </h2>
+            <div class="players">
+                <span id="jail-player-0" class="player">&#128056;</span>
+                <span id="jail-player-1" class="player">&#128057;</span>
+                <span id="jail-player-2" class="player">&#128058;</span>
+                <span id="jail-player-3" class="player">&#128059;</span>
+            </div>
         </div>
         <div id="pall-mall" class="card">
-            <h2>Pall Mall</h2>
+            <div class="set set-pink"></div>
+            <h2>Pall Mall </h2>
+            <div class="players">
+                <span id="pall-mall-player-0" class="player">&#128056;</span>
+                <span id="pall-mall-player-1" class="player">&#128057;</span>
+                <span id="pall-mall-player-2" class="player">&#128058;</span>
+                <span id="pall-mall-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="whitehall" class="card">
-            <h2>Whitehall</h2>
+            <div class="set set-pink"></div>
+            <h2>Whitehall </h2>
+            <div class="players">
+                <span id="whitehall-player-0" class="player">&#128056;</span>
+                <span id="whitehall-player-1" class="player">&#128057;</span>
+                <span id="whitehall-player-2" class="player">&#128058;</span>
+                <span id="whitehall-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="northumberland" class="card">
-            <h2>Northumberland Avenue</h2>
+            <div class="set set-pink"></div>
+            <h2>Northumberland Avenue </h2>
+            <div class="players">
+                <span id="northumberland-player-0" class="player">&#128056;</span>
+                <span id="northumberland-player-1" class="player">&#128057;</span>
+                <span id="northumberland-player-2" class="player">&#128058;</span>
+                <span id="northumberland-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="bow" class="card">
-            <h2>Bow Street</h2>
+            <div class="set set-orange"></div>
+            <h2>Bow Street </h2>
+            <div class="players">
+                <span id="bow-player-0" class="player">&#128056;</span>
+                <span id="bow-player-1" class="player">&#128057;</span>
+                <span id="bow-player-2" class="player">&#128058;</span>
+                <span id="bow-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="marlborough" class="card">
-            <h2>Marlborough Street</h2>
+            <div class="set set-orange"></div>
+            <h2>Marlborough Street </h2>
+            <div class="players">
+                <span id="marlborough-player-0" class="player">&#128056;</span>
+                <span id="marlborough-player-1" class="player">&#128057;</span>
+                <span id="marlborough-player-2" class="player">&#128058;</span>
+                <span id="marlborough-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="vine" class="card">
-            <h2>Vine Street</h2>
+            <div class="set set-orange"></div>
+            <h2>Vine Street </h2>
+            <div class="players">
+                <span id="vine-player-0" class="player">&#128056;</span>
+                <span id="vine-player-1" class="player">&#128057;</span>
+                <span id="vine-player-2" class="player">&#128058;</span>
+                <span id="vine-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="parking" class="card">
-            <h2>Free Parking</h2>
+            <h2>Free Parking </h2>
+            <div class="players">
+                <span id="parking-player-0" class="player">&#128056;</span>
+                <span id="parking-player-1" class="player">&#128057;</span>
+                <span id="parking-player-2" class="player">&#128058;</span>
+                <span id="parking-player-3" class="player">&#128059;</span>
+            </div>
         </div>
         <div id="strand" class="card">
-            <h2>Strand</h2>
+            <div class="set set-red"></div>
+            <h2>Strand </h2>
+            <div class="players">
+                <span id="strand-player-0" class="player">&#128056;</span>
+                <span id="strand-player-1" class="player">&#128057;</span>
+                <span id="strand-player-2" class="player">&#128058;</span>
+                <span id="strand-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="fleet" class="card">
-            <h2>Fleet Street</h2>
+            <div class="set set-red"></div>
+            <h2>Fleet Street </h2>
+            <div class="players">
+                <span id="fleet-player-0" class="player">&#128056;</span>
+                <span id="fleet-player-1" class="player">&#128057;</span>
+                <span id="fleet-player-2" class="player">&#128058;</span>
+                <span id="fleet-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="trafalgar" class="card">
-            <h2>Trafalgar Square</h2>
+            <div class="set set-red"></div>
+            <h2>Trafalgar Square </h2>
+            <div class="players">
+                <span id="trafalgar-player-0" class="player">&#128056;</span>
+                <span id="trafalgar-player-1" class="player">&#128057;</span>
+                <span id="trafalgar-player-2" class="player">&#128058;</span>
+                <span id="trafalgar-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="leicester" class="card">
-            <h2>Leicester Square</h2>
+            <div class="set set-yellow"></div>
+            <h2>Leicester Square </h2>
+            <div class="players">
+                <span id="leicester-player-0" class="player">&#128056;</span>
+                <span id="leicester-player-1" class="player">&#128057;</span>
+                <span id="leicester-player-2" class="player">&#128058;</span>
+                <span id="leicester-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="coventry" class="card">
-            <h2>Coventry Street</h2>
+            <div class="set set-yellow"></div>
+            <h2>Coventry Street </h2>
+            <div class="players">
+                <span id="coventry-player-0" class="player">&#128056;</span>
+                <span id="coventry-player-1" class="player">&#128057;</span>
+                <span id="coventry-player-2" class="player">&#128058;</span>
+                <span id="coventry-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="picadilly" class="card">
-            <h2>Picadilly</h2>
+            <div class="set set-yellow"></div>
+            <h2>Picadilly </h2>
+            <div class="players">
+                <span id="picadilly-player-0" class="player">&#128056;</span>
+                <span id="picadilly-player-1" class="player">&#128057;</span>
+                <span id="picadilly-player-2" class="player">&#128058;</span>
+                <span id="picadilly-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="go-to-jail" class="card">
-            <h2>Go to Jail</h2>
+            <h2>Go to Jail </h2>
+            <div class="players">
+                <span id="go-to-jail-player-0" class="player">&#128056;</span>
+                <span id="go-to-jail-player-1" class="player">&#128057;</span>
+                <span id="go-to-jail-player-2" class="player">&#128058;</span>
+                <span id="go-to-jail-player-3" class="player">&#128059;</span>
+            </div>
         </div>
         <div id="regent" class="card">
-            <h2>Regent Street</h2>
+            <div class="set set-green"></div>
+            <h2>Regent Street </h2>
+            <div class="players">
+                <span id="regent-player-0" class="player">&#128056;</span>
+                <span id="regent-player-1" class="player">&#128057;</span>
+                <span id="regent-player-2" class="player">&#128058;</span>
+                <span id="regent-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="oxford" class="card">
-            <h2>Oxford Street</h2>
+            <div class="set set-green"></div>
+            <h2>Oxford Street </h2>
+            <div class="players">
+                <span id="oxford-player-0" class="player">&#128056;</span>
+                <span id="oxford-player-1" class="player">&#128057;</span>
+                <span id="oxford-player-2" class="player">&#128058;</span>
+                <span id="oxford-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="bond" class="card">
-            <h2>Bond Street</h2>
+            <div class="set set-green"></div>
+            <h2>Bond Street </h2>
+            <div class="players">
+                <span id="bond-player-0" class="player">&#128056;</span>
+                <span id="bond-player-1" class="player">&#128057;</span>
+                <span id="bond-player-2" class="player">&#128058;</span>
+                <span id="bond-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="fenchurch" class="card">
-            <h2>Fenchurch Street station</h2>
+            <div class="set set-clear"></div>
+            <h2>Fenchurch Street station </h2>
+            <div class="players">
+                <span id="fenchurch-player-0" class="player">&#128056;</span>
+                <span id="fenchurch-player-1" class="player">&#128057;</span>
+                <span id="fenchurch-player-2" class="player">&#128058;</span>
+                <span id="fenchurch-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="park" class="card">
-            <h2>Park Lane</h2>
+            <div class="set set-purple"></div>
+            <h2>Park Lane </h2>
+            <div class="players">
+                <span id="park-player-0" class="player">&#128056;</span>
+                <span id="park-player-1" class="player">&#128057;</span>
+                <span id="park-player-2" class="player">&#128058;</span>
+                <span id="park-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
         <div id="mayfair" class="card">
-            <h2>Mayfair</h2>
+            <div class="set set-purple"></div>
+            <h2>Mayfair </h2>
+            <div class="players">
+                <span id="mayfair-player-0" class="player">&#128056;</span>
+                <span id="mayfair-player-1" class="player">&#128057;</span>
+                <span id="mayfair-player-2" class="player">&#128058;</span>
+                <span id="mayfair-player-3" class="player">&#128059;</span>
+            </div>
             <p>&pound; 60</p>
         </div>
     </div>

@@ -20,6 +20,9 @@
             for (let i = 0; i < game.bank.accounts.length; i++) {
                 setBalance(i, game.bank.accounts[i])
             }
+            if (game.bankruptPlayer) {
+                show("bankruptcy")
+            }
         }
 
         window.takeTurn = takeTurn
@@ -40,6 +43,7 @@
             <p class="player-money">&#128058; John &pound;<span id="balance-2">1000</span></p>
             <p class="player-money">&#128059; Michelle &pound;<span id="balance-3">1000</span></p>
         </div>
+        <div id="bankruptcy">A player is Bankrupt! Game Over</div>
         <div id="go" class="card">
             <h2>Go </h2>
             <div class="players">
@@ -80,7 +84,7 @@
                 <span id="kings-cross-player-2" class="player">&#128058;</span>
                 <span id="kings-cross-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 200</p>
         </div>
         <div id="angel" class="card">
             <div class="set set-blue"></div>
@@ -91,7 +95,7 @@
                 <span id="angel-player-2" class="player">&#128058;</span>
                 <span id="angel-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 100</p>
         </div>
         <div id="euston" class="card">
             <div class="set set-blue"></div>
@@ -102,7 +106,7 @@
                 <span id="euston-player-2" class="player">&#128058;</span>
                 <span id="euston-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 100</p>
         </div>
         <div id="pentonville" class="card">
             <div class="set set-blue"></div>
@@ -113,9 +117,10 @@
                 <span id="pentonville-player-2" class="player">&#128058;</span>
                 <span id="pentonville-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 120</p>
         </div>
         <div id="jail" class="card">
+            <div class="set set-clear"><span class="card-emoji">&#128110;</span></div>
             <h2>Jail </h2>
             <div class="players">
                 <span id="jail-player-0" class="player">&#128056;</span>
@@ -133,7 +138,7 @@
                 <span id="pall-mall-player-2" class="player">&#128058;</span>
                 <span id="pall-mall-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 140</p>
         </div>
         <div id="whitehall" class="card">
             <div class="set set-pink"></div>
@@ -144,7 +149,7 @@
                 <span id="whitehall-player-2" class="player">&#128058;</span>
                 <span id="whitehall-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 140</p>
         </div>
         <div id="northumberland" class="card">
             <div class="set set-pink"></div>
@@ -155,7 +160,7 @@
                 <span id="northumberland-player-2" class="player">&#128058;</span>
                 <span id="northumberland-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 160</p>
         </div>
         <div id="bow" class="card">
             <div class="set set-orange"></div>
@@ -166,7 +171,7 @@
                 <span id="bow-player-2" class="player">&#128058;</span>
                 <span id="bow-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 180</p>
         </div>
         <div id="marlborough" class="card">
             <div class="set set-orange"></div>
@@ -177,7 +182,7 @@
                 <span id="marlborough-player-2" class="player">&#128058;</span>
                 <span id="marlborough-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 180</p>
         </div>
         <div id="vine" class="card">
             <div class="set set-orange"></div>
@@ -188,9 +193,12 @@
                 <span id="vine-player-2" class="player">&#128058;</span>
                 <span id="vine-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 200</p>
         </div>
         <div id="parking" class="card">
+            <div class="set set-clear">
+                <span class="card-emoji">&#128663;</span>
+            </div>
             <h2>Free Parking </h2>
             <div class="players">
                 <span id="parking-player-0" class="player">&#128056;</span>
@@ -208,7 +216,7 @@
                 <span id="strand-player-2" class="player">&#128058;</span>
                 <span id="strand-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 220</p>
         </div>
         <div id="fleet" class="card">
             <div class="set set-red"></div>
@@ -219,7 +227,7 @@
                 <span id="fleet-player-2" class="player">&#128058;</span>
                 <span id="fleet-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 220</p>
         </div>
         <div id="trafalgar" class="card">
             <div class="set set-red"></div>
@@ -230,7 +238,7 @@
                 <span id="trafalgar-player-2" class="player">&#128058;</span>
                 <span id="trafalgar-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 240</p>
         </div>
         <div id="leicester" class="card">
             <div class="set set-yellow"></div>
@@ -241,7 +249,7 @@
                 <span id="leicester-player-2" class="player">&#128058;</span>
                 <span id="leicester-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 260</p>
         </div>
         <div id="coventry" class="card">
             <div class="set set-yellow"></div>
@@ -252,7 +260,7 @@
                 <span id="coventry-player-2" class="player">&#128058;</span>
                 <span id="coventry-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 260</p>
         </div>
         <div id="piccadilly" class="card">
             <div class="set set-yellow"></div>
@@ -263,9 +271,10 @@
                 <span id="piccadilly-player-2" class="player">&#128058;</span>
                 <span id="piccadilly-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 280</p>
         </div>
         <div id="go-to-jail" class="card">
+            <div class="set set-clear"><span class="card-emoji">&#128110;</span></div>
             <h2>Go to Jail </h2>
             <div class="players">
                 <span id="go-to-jail-player-0" class="player">&#128056;</span>
@@ -283,7 +292,7 @@
                 <span id="regent-player-2" class="player">&#128058;</span>
                 <span id="regent-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 300</p>
         </div>
         <div id="oxford" class="card">
             <div class="set set-green"></div>
@@ -294,7 +303,7 @@
                 <span id="oxford-player-2" class="player">&#128058;</span>
                 <span id="oxford-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 300</p>
         </div>
         <div id="bond" class="card">
             <div class="set set-green"></div>
@@ -305,10 +314,10 @@
                 <span id="bond-player-2" class="player">&#128058;</span>
                 <span id="bond-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 320</p>
         </div>
         <div id="fenchurch" class="card">
-            <div class="set set-clear"></div>
+            <div class="set set-clear"><span class="card-emoji">&#128642;</span></div>
             <h2>Fenchurch Street station </h2>
             <div class="players">
                 <span id="fenchurch-player-0" class="player">&#128056;</span>
@@ -316,7 +325,7 @@
                 <span id="fenchurch-player-2" class="player">&#128058;</span>
                 <span id="fenchurch-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 200</p>
         </div>
         <div id="park" class="card">
             <div class="set set-purple"></div>
@@ -327,7 +336,7 @@
                 <span id="park-player-2" class="player">&#128058;</span>
                 <span id="park-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 350</p>
         </div>
         <div id="mayfair" class="card">
             <div class="set set-purple"></div>
@@ -338,7 +347,7 @@
                 <span id="mayfair-player-2" class="player">&#128058;</span>
                 <span id="mayfair-player-3" class="player">&#128059;</span>
             </div>
-            <p>&pound; 60</p>
+            <p>&pound; 400</p>
         </div>
     </div>
 </body>
